@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Custom Scrollbar Styling */
+
+/* base */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: theme('colors.slate.400 / 40%'); /* fallback */
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+/* hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.primary.500'); /* Tailwind theme color */
+}
+
+/* dark mode override */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: theme('colors.slate.500 / 40%');
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.accent.500'); /* Indigo accent on hover in dark mode */
+}
